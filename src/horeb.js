@@ -165,6 +165,7 @@ export class NotFound extends CustomError {
   constructor(customMessage) {
     super(customMessage);
     this.name = this.constructor.name;
+    this.type = this.constructor.name;
     this.httpCode = 404;
     this.code = status.NOT_FOUND;
     this.message = customMessage || 'Not found.';
@@ -177,6 +178,7 @@ export class BadRequest extends CustomError {
   constructor(customMessage) {
     super(customMessage);
     this.name = this.constructor.name;
+    this.type = this.constructor.name;
     this.httpCode = 400;
     this.code = status.INVALID_ARGUMENT;
     this.message = customMessage || 'Bad request.';
@@ -189,6 +191,7 @@ export class InternalServerError extends CustomError {
   constructor(customMessage) {
     super(customMessage);
     this.name = this.constructor.name;
+    this.type = this.constructor.name;
     this.httpCode = 500;
     this.code = status.INTERNAL;
     this.message = customMessage || 'An unexpected error occurred.';
@@ -201,6 +204,7 @@ export class ServiceUnavailable extends CustomError {
   constructor(customMessage) {
     super(customMessage);
     this.name = this.constructor.name;
+    this.type = this.constructor.name;
     this.httpCode = 503;
     this.code = status.UNAVAILABLE;
     this.message = customMessage || 'An unexpected error occurred.';

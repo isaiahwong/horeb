@@ -156,6 +156,7 @@ export class NotAuthorized extends CustomError {
     this.httpCode = 401;
     this.code = status.UNAUTHENTICATED;
     this.message = customMessage || 'Not authorized.';
+    this.type = 'not_authorized';
   }
   static get httpCode() { return 401 }
   static get code() { return status.UNAUTHENTICATED }
@@ -169,6 +170,7 @@ export class NotFound extends CustomError {
     this.httpCode = 404;
     this.code = status.NOT_FOUND;
     this.message = customMessage || 'Not found.';
+    this.type = 'not_found';
   }
   static get httpCode() { return 404 }
   static get code() { return status.NOT_FOUND }
@@ -182,6 +184,7 @@ export class BadRequest extends CustomError {
     this.httpCode = 400;
     this.code = status.INVALID_ARGUMENT;
     this.message = customMessage || 'Bad request.';
+    this.type = 'bad_request';
   }
   static get httpCode() { return 400 }
   static get code() { return status.INVALID_ARGUMENT }
@@ -195,6 +198,7 @@ export class InternalServerError extends CustomError {
     this.httpCode = 500;
     this.code = status.INTERNAL;
     this.message = customMessage || 'An unexpected error occurred.';
+    this.type = 'internal_server_request';
   }
   static get httpCode() { return 500 }
   static get code() { return status.INTERNAL }
@@ -208,6 +212,7 @@ export class ServiceUnavailable extends CustomError {
     this.httpCode = 503;
     this.code = status.UNAVAILABLE;
     this.message = customMessage || 'An unexpected error occurred.';
+    this.type = 'service_unavailable';
   }
   static get httpCode() { return 503 }
   static get code() { return status.UNAVAILABLE }
